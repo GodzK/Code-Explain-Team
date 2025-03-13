@@ -1,0 +1,894 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Roboto', sans-serif;
+    color: #333;
+    overflow-x: hidden;
+    background: linear-gradient(180deg, #00b7eb 0%, #f5f5f0 100%);
+}
+
+.navbar {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    background: linear-gradient(90deg, rgba(0, 183, 235, 0.9), rgba(255, 64, 64, 0.9));
+    padding: 20px 40px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    z-index: 1000;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+    backdrop-filter: blur(5px);
+}
+
+.logo img {
+    height: 60px;
+    animation: logoPulse 2s infinite ease-in-out;
+}
+
+.nav-links {
+    list-style: none;
+    display: flex;
+    align-items: center;
+}
+
+.nav-links li {
+    margin: 0 25px;
+}
+
+.nav-links a {
+    color: #ffd700;
+    text-decoration: none;
+    font-size: 1.3rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    transition: color 0.3s ease, transform 0.3s ease;
+    text-shadow: 1px 1px 5px rgba(0, 0, 0, 0.5);
+}
+
+.nav-links a:hover {
+    color: #ff4040;
+    transform: scale(1.1);
+}
+
+.hamburger {
+    display: none;
+    flex-direction: column;
+    cursor: pointer;
+}
+
+.hamburger span {
+    width: 30px;
+    height: 4px;
+    background: #ffd700;
+    margin: 3px 0;
+    transition: all 0.3s ease;
+}
+
+/* Hero Section (เก็บไว้เหมือนเดิม) */
+.hero {
+    height: 100vh;
+    position: relative;
+    overflow: hidden;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: linear-gradient(180deg, #00b7eb 0%, #87ceeb 100%);
+}
+
+.hero .parallax-layer {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    z-index: 1;
+}
+
+.hero .layer-1 img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    animation: seaWave 10s infinite ease-in-out;
+}
+
+.hero .layer-2 img {
+    width: 80%;
+    height: auto;
+    position: absolute;
+    top: 20%;
+    left: 10%;
+    animation: islandFloat 6s infinite ease-in-out;
+}
+
+.hero .layer-3 img {
+    width: 40%;
+    height: auto;
+    position: absolute;
+    top: 40%;
+    left: 20%;
+    animation: shipRock 8s infinite ease-in-out;
+}
+
+.hero .layer-4 img {
+    width: 100%;
+    height: 20vh;
+    position: absolute;
+    bottom: 0;
+    animation: waveCrash 5s infinite ease-in-out;
+}
+
+.hero-content {
+    z-index: 5;
+    text-align: center;
+    padding: 20px 40px;
+    background: rgba(255, 215, 0, 0.2);
+    border-radius: 20px;
+    box-shadow: 0 0 20px rgba(255, 215, 0, 0.5);
+    animation: contentPulse 4s infinite ease-in-out;
+    transition: transform 0.3s ease;
+}
+
+.hero-content:hover {
+    transform: scale(1.05);
+}
+
+.hero-content h1 {
+    font-family: 'Pirata One', cursive;
+    font-size: 4.5rem;
+    color: #ff4040;
+    text-shadow: 2px 2px 10px rgba(255, 64, 64, 0.7);
+    animation: textGlow 3s infinite alternate;
+}
+
+.hero-content p {
+    font-size: 1.6rem;
+    color: #333;
+    margin: 15px 0;
+    animation: textFade 4s infinite ease-in-out;
+}
+
+.btn {
+    display: inline-block;
+    padding: 15px 40px;
+    background: linear-gradient(45deg, #ff4040, #ffd700);
+    color: #fff;
+    text-decoration: none;
+    border-radius: 25px;
+    font-size: 1.4rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    box-shadow: 0 5px 15px rgba(255, 64, 64, 0.5);
+    transition: all 0.4s ease;
+    animation: buttonBounce 3s infinite ease-in-out;
+}
+
+.btn:hover {
+    background: linear-gradient(45deg, #e63939, #d4a017);
+    transform: translateY(-5px);
+    box-shadow: 0 8px 20px rgba(255, 64, 64, 0.7);
+}
+
+.parrot-animation {
+    position: absolute;
+    top: 20%;
+    right: 5%;
+    z-index: 6;
+    animation: flyParrot 10s infinite linear;
+}
+
+.parrot-animation img {
+    width: 150px;
+    animation: parrotFlap 1s infinite alternate;
+}
+
+.sun-glow {
+    position: absolute;
+    top: 5%;
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: 6;
+    animation: sunGlow 6s infinite ease-in-out;
+}
+
+.sun-glow img {
+    width: 200px;
+    filter: brightness(1.5);
+}
+
+.seagull-animation {
+    position: absolute;
+    top: 15%;
+    left: 10%;
+    z-index: 6;
+    animation: flySeagull 12s infinite linear;
+}
+
+.seagull-animation img {
+    width: 100px;
+    animation: seagullFlap 1.5s infinite alternate;
+}
+
+.smoke-animation {
+    position: absolute;
+    top: 25%;
+    left: 15%;
+    z-index: 6;
+    animation: smokeRise 8s infinite ease-out;
+}
+
+.smoke-animation img {
+    width: 150px;
+    opacity: 0.7;
+}
+
+/* About Section */
+.about {
+    height: 100vh;
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: linear-gradient(135deg, #87ceeb, #2e8b57);
+}
+
+.about .parallax-layer {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    z-index: 1;
+}
+
+.about .layer-bg img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.about .layer-waterfall {
+    top: 60%;
+    left: 20%;
+    z-index: 2;
+}
+
+.about .layer-waterfall img {
+    width: 200px;
+}
+
+.about .layer-eagle {
+    top: 20%;
+    right: 10%;
+    z-index: 3;
+}
+
+.about .layer-eagle img {
+    width: 150px;
+}
+
+.about .content {
+    z-index: 5;
+    padding: 40px;
+    text-align: center;
+    background: rgba(255, 215, 0, 0.3);
+    border-radius: 20px;
+    box-shadow: 0 0 30px rgba(255, 215, 0, 0.7);
+    animation: contentPulse 4s infinite ease-in-out;
+}
+
+.about h2 {
+    font-family: 'Pirata One', cursive;
+    font-size: 3.5rem;
+    color: #ff4040;
+    text-shadow: 3px 3px 15px rgba(255, 64, 64, 0.8);
+    margin-bottom: 40px;
+    animation: textGlow 3s infinite alternate;
+}
+
+.team-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 30px;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.team-member {
+    position: relative;
+    background: rgba(0, 183, 235, 0.3);
+    padding: 20px;
+    border-radius: 15px;
+    text-align: center;
+    transition: transform 0.3s ease;
+    border: 3px solid #ffd700;
+    animation: float 5s infinite ease-in-out;
+}
+
+.team-member:hover {
+    transform: scale(1.1) translateY(-10px);
+    box-shadow: 0 15px 30px rgba(255, 215, 0, 0.8);
+}
+
+.team-member img {
+    width: 100%;
+    height: 250px;
+    object-fit: cover;
+    border-radius: 10px;
+    animation: imagePulse 4s infinite ease-in-out;
+}
+
+.team-member h3 {
+    font-size: 1.8rem;
+    color: #ffd700;
+    margin: 15px 0;
+}
+
+.team-member .speech {
+    font-size: 1.2rem;
+    color: #333;
+    opacity: 0;
+    animation: speechBubble 3s infinite ease-in-out;
+}
+
+.team-member .smoke-effect {
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: 1;
+}
+
+.team-member .smoke-effect img {
+    width: 150px;
+    opacity: 0.7;
+    animation: smokeRise 4s infinite ease-out;
+}
+
+/* Courses Section */
+.courses {
+    height: 100vh;
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: linear-gradient(135deg, #ff4040, #00b7eb);
+}
+
+.courses .parallax-layer {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    z-index: 1;
+}
+
+.courses .layer-bg img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.courses .layer-seagull {
+    top: 15%;
+    right: 10%;
+    z-index: 3;
+}
+
+.courses .layer-seagull img {
+    width: 100px;
+}
+
+.courses .content {
+    z-index: 5;
+    padding: 40px;
+    text-align: center;
+    background: rgba(0, 183, 235, 0.3);
+    border-radius: 20px;
+    box-shadow: 0 0 30px rgba(0, 183, 235, 0.7);
+    animation: contentPulse 4s infinite ease-in-out;
+}
+
+.courses h2 {
+    font-family: 'Pirata One', cursive;
+    font-size: 3.5rem;
+    color: #ffd700;
+    text-shadow: 3px 3px 15px rgba(255, 215, 0, 0.8);
+    margin-bottom: 40px;
+    animation: textGlow 3s infinite alternate;
+}
+
+.course-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 30px;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.course-item {
+    position: relative;
+    background: rgba(255, 64, 64, 0.3);
+    padding: 20px;
+    border-radius: 15px;
+    text-align: center;
+    transition: transform 0.3s ease;
+    border: 3px solid #ffd700;
+    animation: float 6s infinite ease-in-out;
+}
+
+.course-item:hover {
+    transform: scale(1.1) translateX(20px);
+    box-shadow: 0 15px 30px rgba(255, 215, 0, 0.8);
+}
+
+.course-item img {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+    border-radius: 10px;
+    animation: imagePulse 4s infinite ease-in-out;
+}
+.course-item img {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+    border-radius: 10px;
+    animation: imagePulse 4s infinite ease-in-out;
+}
+#js img{
+    width: 120px;
+    height: 200px;
+}
+
+.course-item p {
+    font-size: 1.2rem;
+    color: #333;
+}
+
+.course-item .cannon-smoke {
+    position: absolute;
+    top: 10%;
+    right: 10%;
+    z-index: 1;
+}
+
+.course-item .cannon-smoke img {
+    width: 100%;
+    opacity: 0.1;
+    animation: smokeExplode 3s infinite ease-out;
+}
+
+/* Why Us Section */
+.why-us {
+    height: 100vh;
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: linear-gradient(135deg, #ffd700, #4b0082);
+}
+
+.why-us .parallax-layer {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    z-index: 1;
+}
+
+.why-us .layer-bg img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.why-us .layer-flag {
+    top: 20%;
+    right: 10%;
+    z-index: 3;
+}
+
+.why-us .layer-flag img {
+    width: 200px;
+}
+
+.why-us .content {
+    z-index: 5;
+    padding: 40px;
+    text-align: center;
+    background: rgba(0, 183, 235, 0.3);
+    border-radius: 20px;
+    box-shadow: 0 0 30px rgba(0, 183, 235, 0.7);
+    animation: contentPulse 4s infinite ease-in-out;
+}
+
+.why-us h2 {
+    font-family: 'Pirata One', cursive;
+    font-size: 3.5rem;
+    color: #ff4040;
+    text-shadow: 3px 3px 15px rgba(255, 64, 64, 0.8);
+    margin-bottom: 40px;
+    animation: textGlow 3s infinite alternate;
+}
+
+.reason-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 30px;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.reason {
+    background: rgba(255, 215, 0, 0.3);
+    padding: 20px;
+    border-radius: 15px;
+    text-align: center;
+    transition: transform 0.3s ease;
+    border: 3px solid #00b7eb;
+    animation: float 5s infinite ease-in-out;
+}
+
+.reason:hover {
+    transform: scale(1.2) translateY(-10px);
+    box-shadow: 0 15px 30px rgba(255, 215, 0, 0.8);
+}
+
+.reason img {
+    width: 100px;
+    animation: gemGlow 3s infinite ease-in-out;
+}
+
+.reason h3 {
+    font-size: 1.8rem;
+    color: #ffd700;
+    margin: 10px 0;
+}
+
+.reason p {
+    font-size: 1.2rem;
+    color: #333;
+}
+
+/* Testimonials Section */
+.testimonials {
+    height: 100vh;
+    position: relative;
+    display: flex;
+    justify-content: center;
+    text-align: center;
+    align-items: center;
+    background: linear-gradient(135deg, #87ceeb, #1c2526);
+}
+
+.testimonials .parallax-layer {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    z-index: 1;
+}
+
+.testimonials .layer-bg img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.testimonials .layer-storm {
+    width: 50%;
+    right: 0;
+    z-index: 2;
+}
+
+.testimonials .layer-storm img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.testimonials .layer-lightning {
+    top: 10%;
+    left: 60%;
+    z-index: 3;
+}
+
+.testimonials .layer-lightning img {
+    width: 300px;
+    opacity: 0.7;
+}
+
+.testimonials .content {
+    z-index: 5;
+    padding: 40px;
+    text-align: center;
+    background: rgba(255, 64, 64, 0.3);
+    border-radius: 20px;
+    box-shadow: 0 0 30px rgba(255, 64, 64, 0.7);
+    animation: contentPulse 4s infinite ease-in-out;
+}
+
+.testimonials h2 {
+    font-family: 'Pirata One', cursive;
+    font-size: 3.5rem;
+    color: #ffd700;
+    text-shadow: 3px 3px 15px rgba(255, 215, 0, 0.8);
+    margin-bottom: 40px;
+    animation: textGlow 3s infinite alternate;
+}
+
+.testimonial-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
+    gap: 30px;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.testimonial {
+    position: relative;
+    padding: 20px;
+    animation: bottleFloat 6s infinite ease-in-out;
+}
+
+.bottle {
+    position: relative;
+    overflow: hidden;
+}
+
+.bottle img {
+    width: 100%;
+    height: auto;
+    border-radius: 15px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+    animation: bottleFloat 3s infinite ease-in-out;
+}
+
+.testimonial p {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 80%;
+    font-size: 1.3rem;
+    color: #333;
+    font-style: italic;
+    animation: textWave 2s infinite ease-in-out;
+}
+
+.testimonial h4 {
+    position: absolute;
+    bottom: 20px;
+    right: 20px;
+    font-size: 1.5rem;
+    color: #ff4040;
+    animation: textGlow 3s infinite alternate;
+}
+
+/* Call to Action */
+.cta {
+    height: 100vh;
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: linear-gradient(135deg, #ffd700, #00b7eb);
+}
+
+.cta .parallax-layer {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    z-index: 1;
+}
+
+.cta .layer-bg img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.cta .layer-door {
+    width: 30%;
+    left: 5%;
+    top: 50%;
+    transform: translateY(-50%);
+    z-index: 3;
+}
+
+.cta .layer-door img {
+    width: 100%;
+    height: auto;
+}
+
+.cta-content {
+    z-index: 5;
+    text-align: center;
+    padding: 40px;
+    background: rgba(0, 183, 235, 0.3);
+    border-radius: 20px;
+    box-shadow: 0 0 30px rgba(0, 183, 235, 0.7);
+    animation: contentPulse 4s infinite ease-in-out;
+}
+
+.cta-content h2 {
+    font-family: 'Pirata One', cursive;
+    font-size: 4rem;
+    color: #ff4040;
+    text-shadow: 3px 3px 15px rgba(255, 64, 64, 0.8);
+    animation: textGlow 3s infinite alternate;
+}
+
+.cta-content p {
+    font-size: 1.6rem;
+    color: #333;
+    margin: 15px 0;
+}
+
+.key-btn {
+    padding: 0;
+    transform: scale(1.2) translateY(-10px);
+    box-shadow: 0 15px 30px rgba(255, 215, 0, 0.8);
+    animation: float 5s infinite ease-in-out;
+}
+
+.key-btn img {
+    width: 100px;
+}
+
+
+/* Footer */
+footer {
+    height: 50vh;
+    position: relative;
+    background: linear-gradient(180deg, #1c2526, #00b7eb);
+    overflow: hidden;
+}
+
+footer .parallax-layer {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    z-index: 1;
+}
+
+footer .layer-bg img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+footer .layer-fish {
+    top: 30%;
+    left: 10%;
+    z-index: 2;
+}
+
+footer .layer-fish img {
+    width: 100px;
+    animation: parrotFlap 1s infinite alternate;
+}
+
+.footer-content {
+    position: relative;
+    z-index: 5;
+    padding: 40px;
+    text-align: center;
+    animation: contentFade 4s infinite ease-in-out;
+}
+
+.footer-content p {
+    font-size: 1.2rem;
+    color: #f5f5f0;
+    margin-bottom: 20px;
+}
+
+.anchor-animation {
+    position: absolute;
+    bottom: 20%;
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: 3;
+    animation: float 6s infinite ease-in-out;
+}
+
+.anchor-animation img {
+    width: 150px;
+}
+
+.social-links {
+    margin-top: 20px;
+    display: flex;
+    justify-content: center;
+}
+.link-item{
+    display: flex;
+    flex-direction: column;
+}
+.social-links a {
+    margin: 0 15px;
+    text-decoration: none;
+    color: white;
+    text-align: center;
+    
+}
+
+.social-links img {
+    width: 50px;
+    transition: transform 0.3s ease;
+    animation: pearlGlow 3s infinite ease-in-out;
+}
+
+.social-links img:hover {
+    transform: scale(1.3);
+}
+
+/* A N I M E T I O N */
+@keyframes logoPulse { 0%, 100% { transform: scale(1); } 50% { transform: scale(1.1); } }
+@keyframes seaWave { 0%, 100% { transform: translateY(0); } 50% { transform: translateY(-10px); } }
+@keyframes islandFloat { 0%, 100% { transform: translateY(0); } 50% { transform: translateY(-15px); } }
+@keyframes shipRock { 0% { transform: translateX(-10px); } 50% { transform: translateX(10px); } 100% { transform: translateX(-10px); } }
+@keyframes waveCrash { 0% { transform: translateX(0); } 50% { transform: translateX(-20px); } 100% { transform: translateX(0); } }
+@keyframes contentPulse { 0%, 100% { transform: scale(1); } 50% { transform: scale(1.02); } }
+@keyframes textGlow { 0% { text-shadow: 2px 2px 10px rgba(255, 64, 64, 0.7); } 100% { text-shadow: 2px 2px 20px rgba(255, 64, 64, 1); } }
+@keyframes textFade { 0%, 100% { opacity: 1; } 50% { opacity: 0.9; } }
+@keyframes buttonBounce { 0%, 100% { transform: translateY(0); } 50% { transform: translateY(-5px); } }
+@keyframes flyParrot { 0% { transform: translateX(100vw); } 100% { transform: translateX(-100vw); } }
+@keyframes parrotFlap { 0% { transform: scaleY(1); } 100% { transform: scaleY(0.9); } }
+@keyframes sunGlow { 0% { transform: scale(1); opacity: 0.8; } 50% { transform: scale(1.1); opacity: 1; } 100% { transform: scale(1); opacity: 0.8; } }
+@keyframes flySeagull { 0% { transform: translateX(-100vw); } 100% { transform: translateX(100vw); } }
+@keyframes seagullFlap { 0% { transform: scaleY(1); } 100% { transform: scaleY(0.95); } }
+@keyframes smokeRise { 0% { transform: translateY(0) scale(1); opacity: 0.7; } 100% { transform: translateY(-100px) scale(1.5); opacity: 0; } }
+@keyframes float { 0%, 100% { transform: translateY(0); } 50% { transform: translateY(-15px); } }
+@keyframes imagePulse { 0%, 100% { transform: scale(1); } 50% { transform: scale(1.05); } }
+@keyframes speechBubble { 0%, 100% { opacity: 0; transform: translateY(0); } 50% { opacity: 1; transform: translateY(-10px); } }
+@keyframes smokeExplode { 0% { transform: scale(0); opacity: 0; } 50% { transform: scale(1.5); opacity: 0.7; } 100% { transform: scale(0); opacity: 0; } }
+@keyframes gemGlow { 0%, 100% { box-shadow: 0 0 10px #ffd700; } 50% { box-shadow: 0 0 30px #ffd700; } }
+@keyframes bottleFloat { 0%, 100% { transform: translateY(0); } 50% { transform: translateY(-20px); } }
+@keyframes textWave { 0%, 100% { transform: translate(-50%, -50%) scale(1); } 50% { transform: translate(-50%, -50%) scale(1.1); } }
+@keyframes lightningStrike { 0%, 100% { opacity: 0; } 50% { opacity: 1; } }
+@keyframes pearlGlow { 0%, 100% { box-shadow: 0 0 10px #f5f5f0; } 50% { box-shadow: 0 0 20px #f5f5f0; } }
+@keyframes contentFade { 0%, 100% { opacity: 1; } 50% { opacity: 0.8; } }
+
+/* Responsive */
+@media (max-width: 768px) {
+    .nav-links {
+        display: none;
+        flex-direction: column;
+        position: absolute;
+        top: 80px;
+        right: 20px;
+        background: rgba(0, 183, 235, 0.95);
+        padding: 20px;
+        border-radius: 10px;
+        box-shadow: 0 5px 15px rgba(0, 0, 0, 0.5);
+    }
+
+    .nav-links.active {
+        display: flex;
+    }
+
+    .hamburger {
+        display: flex;
+    }
+
+    .hero-content h1 {
+        font-size: 3rem;
+    }
+
+    .hero-content p {
+        font-size: 1.2rem;
+    }
+
+    .team-grid, .course-grid, .reason-grid, .testimonial-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .team-member, .course-item, .reason, .testimonial {
+        width: 100%;
+        margin: 15px 0;
+    }
+
+    .cta .layer-door {
+        width: 50%;
+        left: 0;
+    }
+}
