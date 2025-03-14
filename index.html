@@ -9,6 +9,9 @@
       href="https://fonts.googleapis.com/css2?family=Pirata+One&family=Roboto:wght@400;700&display=swap"
       rel="stylesheet"
     />
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans+Thai:wght@100;200;300;400;500;600;700&family=Mitr:wght@200;300;400;500;600;700&family=Noto+Sans+Thai:wght@100..900&family=Outfit:wght@100..900&family=Sigmar&display=swap" rel="stylesheet">
   </head>
   <body>
     <!-- Navigation
@@ -78,7 +81,7 @@
         <div class="team-grid">
           <div class="team-member">
             <img src="./assets/images/pk.jpg" alt="pk" />
-            <h3>pk (Frontend)</h3>
+            <h3>P' PK (Frontend)</h3>
             <p class="speech">Frontend เเห่งยุค</p>
             <div class="smoke-effect">
               <img src="./assets/images/smoke.png" alt="Smoke" />
@@ -86,7 +89,7 @@
           </div>
           <div class="team-member">
             <img src="./assets/images/sun.jpg" alt="sun" />
-            <h3>sun (Backend)</h3>
+            <h3>P' Sun (Backend)</h3>
             <p class="speech">Backend เเห่งยุค</p>
             <div class="smoke-effect">
               <img src="./assets/images/smoke.png" alt="Smoke" />
@@ -94,10 +97,10 @@
           </div>
           <div class="team-member">
             <img src="./assets/images/tik.png" alt="tik" />
-            <h3>tik (Database)</h3>
+            <h3>P' Tik (Database)</h3>
             <p class="speech">Database เเห่งยุค</p>
             <div class="smoke-effect">
-              <img src="./assets/images/smoke.png" alt="Smoke" />
+              <img src="./assets/images/smoke.png" alt="Smoke"  />
             </div>
           </div>
         </div>
@@ -113,12 +116,12 @@
         <img src="./assets/images/seagull.png" alt="Seagull" />
       </div>
       <div class="content">
-        <h2>คอร์สผจญภัยโจรสลัด</h2>
+        <h2 style="color: red;">คอร์สผจญภัยโจรสลัด</h2>
         <div class="course-grid">
           <div class="course-item">
             <img src="./assets/images/html.png" alt="HTML" />
             <h3>HTML</h3>
-            <p>สร้างโครงสร้างเว็บ</p>
+            <p style="font-weight: bolder;">สร้างโครงสร้างเว็บ</p>
             <div class="cannon-smoke">
               <img src="./assets/images/cannon-smoke.png" alt="Cannon Smoke" />
             </div>
@@ -126,15 +129,15 @@
           <div class="course-item">
             <img src="./assets/images/css.png" alt="CSS" />
             <h3>CSS</h3>
-            <p>ออกแบบสไตล์</p>
+            <p style="font-weight: bolder;">ออกแบบเเละตกเเต่งหน้าเว็บ</p>
             <div class="cannon-smoke">
               <img src="./assets/images/cannon-smoke.png" alt="Cannon Smoke" />
             </div>
           </div>
-          <div class="course-item" id="js">
-            <img src="./assets/images/js.png" alt="JavaScript" />
+          <div class="course-item" >
+            <img src="./assets/images/js.png" alt="JavaScript" id="js"/>
             <h3>JavaScript</h3>
-            <p>เพิ่มชีวิตให้เว็บด้วยโค้ด</p>
+            <p style="font-weight: bolder;">เพิ่มชีวิตให้เว็บด้วยโค้ด</p>
             <div class="cannon-smoke">
               <img src="./assets/images/cannon-smoke.png" alt="Cannon Smoke" />
             </div>
@@ -152,7 +155,7 @@
         <img src="./assets/images/pirate-flag-animated.png" alt="Pirate Flag" />
       </div>
       <div class="content">
-        <h2>เหตุผลที่เลือก PirateCode</h2>
+        <h2 style="color: yellow;">เหตุผลที่เลือก PirateCode</h2>
         <div class="reason-grid">
           <div class="reason">
             <img src="./assets/images/treasure-gem.png" alt="Gem" />
@@ -178,31 +181,32 @@
       <div class="parallax-layer layer-bg">
         <img src="./assets/images/treasure-cave-bg.jpg" alt="Treasure Cave" />
       </div>
-
+      <div class="parallax-layer layer-storm">
+        <img src="./assets/images/stormy-sky-bg.jpg" alt="Stormy Sky" />
+      </div>
       <div class="parallax-layer layer-lightning">
         <img src="./assets/images/lightning.png" alt="Lightning" />
       </div>
-      <div class="content">
+      <div class="content centered-content">
         <h2>คำบอกเล่าจากลูกเรือ</h2>
         <div class="testimonial-grid">
           <div class="testimonial">
-            <div class="bottle">
-              <img src="./assets/images/parchment-bg.png" alt="Parchment" />
+            <div class="bottle" style="position: relative; overflow: hidden; display: inline-block;">
+              <img src="./assets/images/parchment-bg.png" alt="Parchment" style="width: 100%; height: auto; border-radius: 15px; box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);" />
+              <p style="position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%); width: 80%; font-size: 1.3rem; color: #333; font-style: italic; text-align: center; margin: 0; padding: 10px; z-index: 1;">"ใส่กันว่าง ไม่มีเหี้ยไรให้ใส่"</p>
+              <h4 style="position: absolute; bottom: 10px; right: 10px; font-size: 1.5rem; color: #ff4040; margin: 0; z-index: 1;">- PK</h4>
             </div>
-            <p>"ใส่กันว่าง ไม่มีเหี้ยไรให้ใส่"</p>
-            <h4>- PK</h4>
           </div>
           <div class="testimonial">
-            <div class="bottle">
-              <img src="./assets/images/parchment-bg.png" alt="Parchment" />
+            <div class="bottle" style="position: relative; overflow: hidden; display: inline-block;">
+              <img src="./assets/images/parchment-bg.png" alt="Parchment" style="width: 100%; height: auto; border-radius: 15px; box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);" />
+              <p style="position: absolute; top: 65%; left: 10%; transform: translate(-50%, -50%); width: 80%; font-size: 1.3rem; color: #333; font-style: italic; text-align: center; margin: 0; padding: 10px; z-index: 1;">"ใส่กันว่าง ไม่มีเหี้ยไรให้ใส่!"</p>
+              <h4 style="position: absolute; bottom: 10px; right: 10px; font-size: 1.5rem; color: #ff4040; margin: 0; z-index: 1;">- PK</h4>
             </div>
-            <p>"ใส่กันว่าง ไม่มีเหี้ยไรให้ใส่!"</p>
-            <h4>-PK</h4>
           </div>
         </div>
       </div>
     </section>
-
     <!-- Call to Action -->
     <section class="cta parallax" id="signup">
       <div class="parallax-layer layer-bg">
